@@ -28,37 +28,27 @@ namespace CustomView {
 			AddDataProfile();
 			AddDataProduct();
 
-
-
-
 			etSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
 
 				//Toast.MakeText(this, etSearch.Text, ToastLength.Short).Show();
-				SearchValue(etSearch.Text);
+				//SearchValue(etSearch.Text)
+				CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchValue(etSearch.Text)); //listProductModel
+				listShow.Adapter = employeeProfileAdapter;
 			};
-
-
-
 
 			//where function [Example]
 			//TestLinQ();
-
-
-
-			CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, listProductModel); //wait for where data++++++++++++++++
-			listShow.Adapter = employeeProfileAdapter;
-
 
 		}
 
 		private List<ProductModel> SearchValue(string value) { //Contains = like in sql
 			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.Contains(value)).ToList();
-/*
-			if () {
-				
-			}
-*/
-			return listProductModel; //wait to do
+			/*
+						if () {
+
+						}
+			*/
+			return productList; //wait to do
 		}
 
 
@@ -70,30 +60,29 @@ namespace CustomView {
 			listShow = FindViewById<ListView>(Resource.Id.lvShow);
 		}
 
+		/*
+				//[Example]
+				void TestLinQ() {
+					var productList = listProductModel.Where(l => l.ProductName.Contains("Galaxy S80+")).ToList();
 
-		//[Example]
-		void TestLinQ() {
-			var productList = listProductModel.Where(l => l.ProductName.Contains("Galaxy S80+")).ToList();
-
-			var productModel = listProductModel.SingleOrDefault(l => l.ProductName.Contains("Galaxy S80+"));
-			//var productName = listProductModel.Single(l => l.ProductName.Contains("Galaxy S80+")).ProductName;
-			var productName = listProductModel.First(l => l.ProductName.Contains("Galaxy S80+"));
-			var count = listProductModel.Where(l => l.ProductId.Equals("0000000019")).Count();
-
-			/*
-						foreach (var item in listProductModel) {
-							var product = item.ProductName.Contains("Galaxy S80+");
-							if (product != null) {
-
-							} else {
-
-							}
-						}
-
-			*/
-		}
+					var productModel = listProductModel.SingleOrDefault(l => l.ProductName.Contains("Galaxy S80+"));
+					//var productName = listProductModel.Single(l => l.ProductName.Contains("Galaxy S80+")).ProductName;
+					var productName = listProductModel.First(l => l.ProductName.Contains("Galaxy S80+"));
+					var count = listProductModel.Where(l => l.ProductId.Equals("0000000019")).Count();
 
 
+								//foreach (var item in listProductModel) {
+							//		var product = item.ProductName.Contains("Galaxy S80+");
+							//		if (product != null) {
+
+							//		} else {
+
+							//		}
+							//	}
+
+
+				}
+		*/
 
 		private void AddDataProfile() {
 			profileModel = new ProfileModel();
