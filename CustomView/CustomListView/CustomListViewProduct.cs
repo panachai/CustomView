@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Views;
 using Android.Widget;
@@ -37,12 +36,29 @@ namespace CustomView {
 			View view = convertView;
 			ViewHolder viewHolder;
 
+			if (view == null) {
+				view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.CustomListView_Product, parent, false);
+				viewHolder = new ViewHolder();
+
+				viewHolder.txtName = view.FindViewById<TextView>(Resource.Id.txtName);
+				viewHolder.txtPrice = view.FindViewById<TextView>(Resource.Id.txtPrice);
+
+				view.Tag = viewHolder;
+			} else {
+				viewHolder = (ViewHolder)view.Tag;
+			}
+
+			viewHolder.txtName.Text = productList[position].ProductName;
+			viewHolder.txtPrice.Text = string.Format("{0}", productList[position].ProductPrice);
+
 			return view;
 		}
 		private class ViewHolder : Java.Lang.Object {
-			public ImageView imvShow;
-			public TextView txtTitle;
-			public TextView txtDes
-				}
+			//public ImageView imvShow;
+			public TextView txtName;
+			public TextView txtPrice;
+		}
+
+
 	}
 }

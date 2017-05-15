@@ -62,10 +62,10 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\CustomView\CustomProfile.cs" />
     <Compile Include="Model\ProfileModel.cs" />
     <Compile Include="Model\ProductModel.cs" />
     <Compile Include="CustomListView\CustomListViewProduct.cs" />
+    <Compile Include="CustomView\CustomProfile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -83,12 +83,13 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\CustomView_Profile.axml" />
     <AndroidResource Include="Resources\layout\CustomListView_Product.axml" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="Resources\CustomView\" />
     <Folder Include="Model\" />
     <Folder Include="CustomListView\" />
+    <Folder Include="CustomView\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="square.picasso">

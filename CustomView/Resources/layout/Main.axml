@@ -8,4 +8,22 @@
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Search Here" />
+        <ListView
+            android:id="@+id/lvShow"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
+    </LinearLayout>
 </RelativeLayout>

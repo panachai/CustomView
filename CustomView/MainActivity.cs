@@ -13,6 +13,8 @@ namespace CustomView {
 		public CustomProfile customProfile;
 		private ProfileModel profileModel;
 		private List<ProductModel> listProductModel;
+		ListView listShow;
+		EditText etSearch;
 
 
 		protected override void OnCreate(Bundle savedInstanceState) {
@@ -25,10 +27,51 @@ namespace CustomView {
 
 			AddDataProfile();
 			AddDataProduct();
-			TestLinQ();
+
+
+
+
+			etSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
+
+				//Toast.MakeText(this, etSearch.Text, ToastLength.Short).Show();
+				SearchValue(etSearch.Text);
+			};
+
+
+
+
+			//where function [Example]
+			//TestLinQ();
+
+
+
+			CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, listProductModel); //wait for where data++++++++++++++++
+			listShow.Adapter = employeeProfileAdapter;
+
 
 		}
 
+		private List<ProductModel> SearchValue(string value) { //Contains = like in sql
+			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.Contains(value)).ToList();
+/*
+			if () {
+				
+			}
+*/
+			return listProductModel; //wait to do
+		}
+
+
+
+
+		void InitProfile() {
+			customProfile = FindViewById<CustomProfile>(Resource.Id.csProfile);
+			etSearch = FindViewById<EditText>(Resource.Id.et_search);
+			listShow = FindViewById<ListView>(Resource.Id.lvShow);
+		}
+
+
+		//[Example]
 		void TestLinQ() {
 			var productList = listProductModel.Where(l => l.ProductName.Contains("Galaxy S80+")).ToList();
 
@@ -234,10 +277,7 @@ namespace CustomView {
 
 		}
 
-		void InitProfile() {
-			customProfile = FindViewById<CustomProfile>(Resource.Id.csProfile);
 
-		}
 	}
 }
 

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="panachai.companyname.customview">
 	<uses-sdk android:minSdkVersion="10" />
+	<!-- android:theme="@style/CustomTheme" add in application-->
 	<application android:allowBackup="true" android:icon="@mipmap/icon" android:label="@string/app_name">
 	</application>
 </manifest>
