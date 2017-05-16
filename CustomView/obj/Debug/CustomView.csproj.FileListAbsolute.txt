@@ -7,7 +7,6 @@ D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\bin\Debug\Square.Ok
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\bin\Debug\Square.Picasso.dll
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\bin\Debug\Xamarin.Android.Support.v4.dll
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
-D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\CustomView.csprojResolveAssemblyReference.cache
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\CustomView.dll
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\CustomView.pdb
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\android\bin\panachai.companyname.customview.apk
@@ -21,6 +20,9 @@ D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\mipma
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\layout\customview_profile.xml
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\layout\customlistview_product.xml
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\values\styles.xml
+D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\layout\customview_search.xml
+D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\layout\customview_searchmenu.xml
+D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\res\layout\customview_searchedittext.xml
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\R.cs.flag
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\uploadflags.txt
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\bin\Debug\CustomView.dll.mdb

@@ -7,7 +7,7 @@ using Android.Widget;
 using Square.Picasso;
 
 namespace CustomView {
-	public class CustomProfile : RelativeLayout {
+	public class CustomViewProfile : RelativeLayout {
 		Context context;
 		private TextView TxtCenter1;
 		private TextView TxtCenter2 { get; set; }
@@ -15,20 +15,20 @@ namespace CustomView {
 		private ImageView ImvCover { get; set; }
 		private ImageView ImvDisplay { get; set; }
 
-		public CustomProfile(Context context) :
-					base(context) {
+		public CustomViewProfile(Context context) :
+							base(context) {
 			this.context = context;
 			Initialize();
 		}
 
-		public CustomProfile(Context context, IAttributeSet attrs) :
-					base(context, attrs) {
+		public CustomViewProfile(Context context, IAttributeSet attrs) :
+							base(context, attrs) {
 			this.context = context;
 			Initialize();
 		}
 
-		public CustomProfile(Context context, IAttributeSet attrs, int defStyle) :
-					base(context, attrs, defStyle) {
+		public CustomViewProfile(Context context, IAttributeSet attrs, int defStyle) :
+							base(context, attrs, defStyle) {
 			this.context = context;
 			Initialize();
 		}
@@ -44,16 +44,10 @@ namespace CustomView {
 			ImvCover = view.FindViewById<ImageView>(Resource.Id.imvCover);
 			ImvDisplay = view.FindViewById<ImageView>(Resource.Id.imvDisplay);
 			//string.Format("{0}", checkin.DateCheckin.Day);
+
 		}
 
 		public void SetData(ProfileModel profileModel) {
-			/*
-			 * not use
-						TxtCenter1.Text = "TitlePassSetValue";
-						TxtCenter2.Text = "EmailPassSetValue";
-						TxtCenter3.Text = "TelPassSetValue";
-			*/
-			//position Overwrite 0
 
 			TxtCenter1.Text = profileModel.TxtCenter1;
 			TxtCenter2.Text = profileModel.TxtCenter2;
@@ -67,11 +61,6 @@ namespace CustomView {
 					   .Load(profileModel.ImvDisplay)
 					.Into(ImvDisplay);
 
-			/*
-			 * wait to do
-						ImvCover
-						ImvDisplay
-			*/
 		}
 
 	}

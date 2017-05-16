@@ -1,16 +1,21 @@
 ﻿<Properties StartupConfiguration="{BF6E2D60-4FF9-4234-92D6-FCA0F5DDCE5E}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="CustomView\Resources\Util\ListViewAdapterUtil.cs" line="17" offsetX="312" offsetY="256" expression="mView" liveUpdate="False" />
+    <Watch file="CustomView\Resources\Util\ListViewAdapterUtil.cs" line="18" offsetX="424" offsetY="272" expression="totalHeight" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\Resources\layout\CustomView_Profile.axml" relfile="CustomView\Resources\layout\CustomView_Profile.axml" line="30" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="CustomView\MainActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="CustomView\MainActivity.cs" Line="50" Column="3" />
+      <File FileName="CustomView\CustomView\CustomViewSearch.cs" Line="11" Column="3" />
+      <File FileName="CustomView\MainActivity.cs" Line="19" Column="5" />
+      <File FileName="CustomView\CustomView\CustomViewSearchEdittext.cs" Line="32" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CustomView AndroidDesignerPreferredDevice="Nexus 4" AndroidDesignerPreferredTheme="Theme.DeviceDefault" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.CustomView AndroidDesignerPreferredDevice="Nexus 4" AndroidDesignerPreferredTheme="Theme.DeviceDefault" PreferredExecutionTarget="Android.192.168.219.101:5555" />
 </Properties>

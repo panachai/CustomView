@@ -65,7 +65,11 @@
     <Compile Include="Model\ProfileModel.cs" />
     <Compile Include="Model\ProductModel.cs" />
     <Compile Include="CustomListView\CustomListViewProduct.cs" />
-    <Compile Include="CustomView\CustomProfile.cs" />
+    <Compile Include="CustomView\CustomViewProfile.cs" />
+    <Compile Include="Resources\Util\ListViewAdapterUtil.cs" />
+    <Compile Include="CustomView\CustomViewSearch.cs" />
+    <Compile Include="CustomView\CustomViewSearchMenu.cs" />
+    <Compile Include="CustomView\CustomViewSearchEdittext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -84,12 +88,16 @@
     <AndroidResource Include="Resources\layout\CustomView_Profile.axml" />
     <AndroidResource Include="Resources\layout\CustomListView_Product.axml" />
     <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\layout\CustomView_Search.axml" />
+    <AndroidResource Include="Resources\layout\CustomView_SearchMenu.axml" />
+    <AndroidResource Include="Resources\layout\CustomView_SearchEdittext.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Model\" />
     <Folder Include="CustomListView\" />
     <Folder Include="CustomView\" />
+    <Folder Include="Resources\Util\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="square.picasso">

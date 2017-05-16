@@ -1,1 +1,1 @@
-<resources><string name="hello">Hello World, Click Me!</string><string name="app_name">CustomView</string></resources>
+<resources><string name="hello">Hello World, Click Me!</string><string name="app_name">CustomView</string><string name="search_type">Choose Search Type</string><string-array name="search_array"><item>SearchByName</item><item>SearchByPrice</item></string-array></resources>

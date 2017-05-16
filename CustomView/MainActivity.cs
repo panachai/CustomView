@@ -10,12 +10,13 @@ namespace CustomView {
 
 	[Activity(Label = "CustomView", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity {
-		public CustomProfile customProfile;
+		public CustomViewProfile customViewProfile;
+		public CustomViewSearch customViewSearch;
 		private ProfileModel profileModel;
 		private List<ProductModel> listProductModel;
 		ListView listShow;
 		EditText etSearch;
-
+		//TextView txtColumn1;
 
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
@@ -23,36 +24,68 @@ namespace CustomView {
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 
-			InitProfile();
+			Init();
 
 			AddDataProfile();
 			AddDataProduct();
 
 			etSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
-
-				//Toast.MakeText(this, etSearch.Text, ToastLength.Short).Show();
-				//SearchValue(etSearch.Text)
 				CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchValue(etSearch.Text)); //listProductModel
 				listShow.Adapter = employeeProfileAdapter;
+
+				//controlHeight
+				//ListViewAdapterUtil.GetTotalHeightofListView(listShow); //for static class
+				new ListViewAdapterUtil().GetTotalHeightofListView(listShow); //for non static
 			};
 
-			//where function [Example]
-			//TestLinQ();
+			/*
+			txtColumn1.Click += delegate {
+				//onclick
+			};
 
+*/
+	
+
+			//ProcessSpinner();
 		}
 
 		private List<ProductModel> SearchValue(string value) { //Contains = like in sql
-//.ToLower() for search in lowercase
-			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.ToLower().Contains(value.ToLower()) ).ToList();
+															   //.ToLower() for search in lowercase
+			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.ToLower().Contains(value.ToLower())).ToList();
 
 			return productList; //wait to do
 		}
 
-		void InitProfile() {
-			customProfile = FindViewById<CustomProfile>(Resource.Id.csProfile);
+		void Init() {
+			//customprofile
+			customViewProfile = FindViewById<CustomViewProfile>(Resource.Id.csProfile);
+			//main
 			etSearch = FindViewById<EditText>(Resource.Id.et_search);
 			listShow = FindViewById<ListView>(Resource.Id.lvShow);
+			//customview search
+			customViewSearch = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
+			//txtColumn1 = FindViewById<TextView>(Resource.Id.txtColumn1);
 		}
+
+		/*
+		void ProcessSpinner() {
+
+			Spinner spinner = FindViewById<Spinner>(Resource.Id.spinnerSearch);
+
+			spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+			var adapter = ArrayAdapter.CreateFromResource(
+					this, Resource.Array.search_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+			adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+			spinner.Adapter = adapter;
+		}
+
+		private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e) { //callback spinner
+			Spinner spinner = (Spinner)sender;
+
+			string toast = string.Format("The planet is {0}", spinner.GetItemAtPosition(e.Position));
+			Toast.MakeText(this, toast, ToastLength.Long).Show();
+		}		*/
 
 		/*
 				//[Example]
@@ -88,7 +121,7 @@ namespace CustomView {
 			profileModel.ImvCover = "http://beingcovers.com/media/facebook-cover/Cat-Paws-facebook-covers-2649.jpeg";
 			profileModel.ImvDisplay = "http://i50.photobucket.com/albums/f350/pervyicons/100x100/Animals/icon_cat4.png";
 
-			customProfile.SetData(profileModel);
+			customViewProfile.SetData(profileModel);
 		}
 
 		private void AddDataProduct() {
