@@ -42,17 +42,11 @@ namespace CustomView {
 		}
 
 		private List<ProductModel> SearchValue(string value) { //Contains = like in sql
-			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.Contains(value)).ToList();
-			/*
-						if () {
+//.ToLower() for search in lowercase
+			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.ToLower().Contains(value.ToLower()) ).ToList();
 
-						}
-			*/
 			return productList; //wait to do
 		}
-
-
-
 
 		void InitProfile() {
 			customProfile = FindViewById<CustomProfile>(Resource.Id.csProfile);
