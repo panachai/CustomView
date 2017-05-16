@@ -6,7 +6,7 @@ using Android.Widget;
 
 namespace CustomView {
 	public class CustomViewSearchMenu : LinearLayout {
-		private TextView txtByName, txtByPrice;
+		//private TextView txtByName, txtByPrice;
 		Context context;
 
 		public CustomViewSearchMenu(Context context) : base(context) {
@@ -29,8 +29,8 @@ namespace CustomView {
 			LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 			View view = inflater.Inflate(Resource.Layout.CustomView_SearchMenu, this);
 
-			txtByName = view.FindViewById<TextView>(Resource.Id.txtByName);
-			txtByPrice = view.FindViewById<TextView>(Resource.Id.txtByPrice);
+			//txtByName = view.FindViewById<TextView>(Resource.Id.txtByName);
+			//txtByPrice = view.FindViewById<TextView>(Resource.Id.txtByPrice);
 
 		}
 

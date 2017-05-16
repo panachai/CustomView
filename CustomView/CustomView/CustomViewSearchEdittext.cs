@@ -6,7 +6,7 @@ using Android.Widget;
 
 namespace CustomView {
 	public class CustomViewSearchEdittext : RelativeLayout {
-		private EditText etSearch;
+		//private EditText etSearch;
 		Context context;
 
 		public CustomViewSearchEdittext(Context context) : base(context) {
@@ -29,7 +29,7 @@ namespace CustomView {
 			LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 			View view = inflater.Inflate(Resource.Layout.CustomView_SearchEdittext, this);
 
-			etSearch = view.FindViewById<EditText>(Resource.Id.et_search);
+			//etSearch = view.FindViewById<EditText>(Resource.Id.et_search);
 
 		}
 

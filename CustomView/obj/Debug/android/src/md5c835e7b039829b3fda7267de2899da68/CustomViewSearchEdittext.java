@@ -2,7 +2,7 @@ package md5c835e7b039829b3fda7267de2899da68;
 
 
 public class CustomViewSearchEdittext
-	extends android.widget.LinearLayout
+	extends android.widget.RelativeLayout
 	implements
 		mono.android.IGCUserPeer
 {

@@ -15,13 +15,12 @@ namespace CustomView {
 		private ProfileModel profileModel;
 		private List<ProductModel> listProductModel;
 		ListView listShow;
-		EditText etSearch;
-		//TextView txtColumn1;
+
 
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
 
-			// Set our view from the "main" layout resource
+			//*Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 
 			Init();
@@ -29,24 +28,18 @@ namespace CustomView {
 			AddDataProfile();
 			AddDataProduct();
 
-			etSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
-				CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchValue(etSearch.Text)); //listProductModel
-				listShow.Adapter = employeeProfileAdapter;
-
-				//controlHeight
-				//ListViewAdapterUtil.GetTotalHeightofListView(listShow); //for static class
-				new ListViewAdapterUtil().GetTotalHeightofListView(listShow); //for non static
-			};
-
-			/*
-			txtColumn1.Click += delegate {
-				//onclick
-			};
-
-*/
-	
-
 			//ProcessSpinner();
+		}
+
+		void Init() {
+			//customprofile
+			customViewProfile = FindViewById<CustomViewProfile>(Resource.Id.csProfile);
+			//main
+			//etSearch = FindViewById<EditText>(Resource.Id.et_search);
+			listShow = FindViewById<ListView>(Resource.Id.lvShow);
+			//customview search
+			customViewSearch = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
+			//txtColumn1 = FindViewById<TextView>(Resource.Id.txtColumn1)
 		}
 
 		private List<ProductModel> SearchValue(string value) { //Contains = like in sql
@@ -56,16 +49,7 @@ namespace CustomView {
 			return productList; //wait to do
 		}
 
-		void Init() {
-			//customprofile
-			customViewProfile = FindViewById<CustomViewProfile>(Resource.Id.csProfile);
-			//main
-			etSearch = FindViewById<EditText>(Resource.Id.et_search);
-			listShow = FindViewById<ListView>(Resource.Id.lvShow);
-			//customview search
-			customViewSearch = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
-			//txtColumn1 = FindViewById<TextView>(Resource.Id.txtColumn1);
-		}
+
 
 		/*
 		void ProcessSpinner() {
