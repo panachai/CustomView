@@ -28,3 +28,4 @@ D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\R.cs.flag
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\uploadflags.txt
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\bin\Debug\CustomView.dll.mdb
 D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\android\assets\CustomView.dll.mdb
+D:\Users\panachai.n\Documents\Projects\CustomView\CustomView\obj\Debug\CustomView.csprojResolveAssemblyReference.cache

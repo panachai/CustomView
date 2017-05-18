@@ -37,9 +37,9 @@ namespace CustomView {
 			edtStartPrice = view.FindViewById<EditText>(Resource.Id.et_StartPrice);
 			edtEndPrice = view.FindViewById<EditText>(Resource.Id.et_EndPrice);
 
-			edtSearch.Visibility = ViewStates.Invisible;
-			edtStartPrice.Visibility = ViewStates.Invisible;
-			edtEndPrice.Visibility = ViewStates.Invisible;
+			edtSearch.Visibility = ViewStates.Gone;
+			edtStartPrice.Visibility = ViewStates.Gone;
+			edtEndPrice.Visibility = ViewStates.Gone;
 
 
 			//etSearch = view.FindViewById<EditText>(Resource.Id.et_search);
@@ -69,14 +69,14 @@ namespace CustomView {
 			if (searchType == CustomViewSearchMenu.SearchBy.ProductId) {
 
 			} else if (searchType == CustomViewSearchMenu.SearchBy.ProductName) {
-				edtSearch.Visibility = ViewStates.Invisible;
+				edtSearch.Visibility = ViewStates.Visible;
 				edtStartPrice.Visibility = ViewStates.Gone;
 				edtEndPrice.Visibility = ViewStates.Gone;
 
 			} else if (searchType == CustomViewSearchMenu.SearchBy.ProductPrice) {
 				edtSearch.Visibility = ViewStates.Gone;
-				edtStartPrice.Visibility = ViewStates.Invisible;
-				edtEndPrice.Visibility = ViewStates.Invisible;
+				edtStartPrice.Visibility = ViewStates.Visible;
+				edtEndPrice.Visibility = ViewStates.Visible;
 
 			}
 		}

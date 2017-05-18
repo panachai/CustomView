@@ -72,14 +72,21 @@ namespace CustomView {
 
 				} else if (type == CustomViewSearchMenu.SearchBy.ProductPrice) {
 					//var price = customViewSearch.edtPrice;
-					int starPrice = int.Parse(customViewSearch.GetSearchValueByPriceStart().Text);
-					int endPrice = int.Parse(customViewSearch.GetSearchValueByPriceEnd().Text);
 
-					CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchByPriceValue(starPrice, endPrice)); //listProductModel
-					customListViewProduct.Adapter = employeeProfileAdapter;
+					if (!string.IsNullOrEmpty(customViewSearch.GetSearchValueByPriceStart().Text)
+						&& !string.IsNullOrEmpty(customViewSearch.GetSearchValueByPriceEnd().Text)) {
+						
+						int starPrice = int.Parse(customViewSearch.GetSearchValueByPriceStart().Text);
+						int endPrice = int.Parse(customViewSearch.GetSearchValueByPriceEnd().Text);
 
-					//*controlHeight
-					new ListViewAdapterUtil().GetTotalHeightofListView(customListViewProduct);
+						CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchByPriceValue(starPrice, endPrice)); //listProductModel
+						customListViewProduct.Adapter = employeeProfileAdapter;
+
+						//*controlHeight
+						new ListViewAdapterUtil().GetTotalHeightofListView(customListViewProduct);
+					}
+
+
 				}
 			};
 		}
@@ -92,14 +99,8 @@ namespace CustomView {
 		}
 
 		private List<ProductModel> SearchByPriceValue(int startValue, int endValue) {
-			//wait for algorithm [endValue]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			
 			List<ProductModel> productList = listProductModel.Where(l => l.ProductPrice >= startValue && l.ProductPrice <= endValue).ToList();
-
-			/*
-			var meds = (from m in Medications
-									where names.Any(name => name.Equals(m.BrandName) || m.GenericName.Contains(name))
-									select m);
-			*/
 
 			return productList;
 		}
