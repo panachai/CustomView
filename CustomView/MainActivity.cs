@@ -13,9 +13,9 @@ namespace CustomView {
 		public CustomViewProfile customViewProfile;
 		public CustomViewSearch customViewSearch;
 		private ProfileModel profileModel;
+		private ListView customListViewProduct;
 		private List<ProductModel> listProductModel;
-		ListView listShow;
-
+		//private List<ProductModel> listProductModel; //move to customviewsearch
 
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
@@ -28,72 +28,82 @@ namespace CustomView {
 			AddDataProfile();
 			AddDataProduct();
 
+			//customViewSearch.SetEventForSearch(this);
+			callbackSearch();
+
+
+			//move to customviewsearch
+			//AddDataProduct();
+
 			//ProcessSpinner();
 		}
 
 		void Init() {
 			//customprofile
 			customViewProfile = FindViewById<CustomViewProfile>(Resource.Id.csProfile);
-			//main
-			//etSearch = FindViewById<EditText>(Resource.Id.et_search);
-			listShow = FindViewById<ListView>(Resource.Id.lvShow);
+
+
+			//listview
+			customListViewProduct = FindViewById<ListView>(Resource.Id.lvShow);
+
 			//customview search
-			customViewSearch = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
+			//customViewSearchMenu = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
+
 			//txtColumn1 = FindViewById<TextView>(Resource.Id.txtColumn1)
 		}
 
-		private List<ProductModel> SearchValue(string value) { //Contains = like in sql
-															   //.ToLower() for search in lowercase
+		void callbackSearch() {
+			//wait callback from CustomViewsearch
+			customViewSearch.Searchtype += (object sender, EventArgs e) => {
+				//var type = customViewSearch.searchType;
+				var type = customViewSearch.GetSearchType();
+
+				if (type == CustomViewSearchMenu.SearchBy.ProductId) {
+
+				} else if (type == CustomViewSearchMenu.SearchBy.ProductName) {
+
+					string valueSearch = customViewSearch.GetSearchValueByName().Text;
+
+					CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchByNameValue(valueSearch)); //listProductModel
+					customListViewProduct.Adapter = employeeProfileAdapter;
+
+					//*controlHeight
+					new ListViewAdapterUtil().GetTotalHeightofListView(customListViewProduct);
+
+				} else if (type == CustomViewSearchMenu.SearchBy.ProductPrice) {
+					//var price = customViewSearch.edtPrice;
+					int starPrice = int.Parse(customViewSearch.GetSearchValueByPriceStart().Text);
+					int endPrice = int.Parse(customViewSearch.GetSearchValueByPriceEnd().Text);
+
+					CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchByPriceValue(starPrice, endPrice)); //listProductModel
+					customListViewProduct.Adapter = employeeProfileAdapter;
+
+					//*controlHeight
+					new ListViewAdapterUtil().GetTotalHeightofListView(customListViewProduct);
+				}
+			};
+		}
+
+		private List<ProductModel> SearchByNameValue(string value) { //Contains = like in sql
+																	 //.ToLower() for search in lowercase
 			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.ToLower().Contains(value.ToLower())).ToList();
 
 			return productList; //wait to do
 		}
 
+		private List<ProductModel> SearchByPriceValue(int startValue, int endValue) {
+			//wait for algorithm [endValue]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			List<ProductModel> productList = listProductModel.Where(l => l.ProductPrice >= startValue && l.ProductPrice <= endValue).ToList();
 
+			/*
+			var meds = (from m in Medications
+									where names.Any(name => name.Equals(m.BrandName) || m.GenericName.Contains(name))
+									select m);
+			*/
 
-		/*
-		void ProcessSpinner() {
-
-			Spinner spinner = FindViewById<Spinner>(Resource.Id.spinnerSearch);
-
-			spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-			var adapter = ArrayAdapter.CreateFromResource(
-					this, Resource.Array.search_array, Android.Resource.Layout.SimpleSpinnerItem);
-
-			adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-			spinner.Adapter = adapter;
+			return productList;
 		}
 
-		private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e) { //callback spinner
-			Spinner spinner = (Spinner)sender;
-
-			string toast = string.Format("The planet is {0}", spinner.GetItemAtPosition(e.Position));
-			Toast.MakeText(this, toast, ToastLength.Long).Show();
-		}		*/
-
-		/*
-				//[Example]
-				void TestLinQ() {
-					var productList = listProductModel.Where(l => l.ProductName.Contains("Galaxy S80+")).ToList();
-
-					var productModel = listProductModel.SingleOrDefault(l => l.ProductName.Contains("Galaxy S80+"));
-					//var productName = listProductModel.Single(l => l.ProductName.Contains("Galaxy S80+")).ProductName;
-					var productName = listProductModel.First(l => l.ProductName.Contains("Galaxy S80+"));
-					var count = listProductModel.Where(l => l.ProductId.Equals("0000000019")).Count();
-
-
-								//foreach (var item in listProductModel) {
-							//		var product = item.ProductName.Contains("Galaxy S80+");
-							//		if (product != null) {
-
-							//		} else {
-
-							//		}
-							//	}
-
-
-				}
-		*/
 
 		private void AddDataProfile() {
 			profileModel = new ProfileModel();
@@ -274,9 +284,7 @@ namespace CustomView {
 			});
 
 
-
 		}
-
 
 	}
 }

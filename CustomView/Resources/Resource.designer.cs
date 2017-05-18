@@ -1182,11 +1182,29 @@ namespace CustomView
 			// aapt resource value: 0x7f080004
 			public const int abc_text_size_title_material_toolbar = 2131230724;
 			
+			// aapt resource value: 0x7f08005d
+			public const int button_long = 2131230813;
+			
+			// aapt resource value: 0x7f08005e
+			public const int button_medium = 2131230814;
+			
+			// aapt resource value: 0x7f08005f
+			public const int button_short = 2131230815;
+			
+			// aapt resource value: 0x7f08005c
+			public const int button_verylong = 2131230812;
+			
 			// aapt resource value: 0x7f080043
 			public const int disabled_alpha_material_dark = 2131230787;
 			
 			// aapt resource value: 0x7f080044
 			public const int disabled_alpha_material_light = 2131230788;
+			
+			// aapt resource value: 0x7f080060
+			public const int edittext_medium = 2131230816;
+			
+			// aapt resource value: 0x7f080067
+			public const int fragment_header_height = 2131230823;
 			
 			// aapt resource value: 0x7f080045
 			public const int highlight_alpha_material_colored = 2131230789;
@@ -1197,6 +1215,54 @@ namespace CustomView
 			// aapt resource value: 0x7f080047
 			public const int highlight_alpha_material_light = 2131230791;
 			
+			// aapt resource value: 0x7f080061
+			public const int icon_margin = 2131230817;
+			
+			// aapt resource value: 0x7f080062
+			public const int icon_medium = 2131230818;
+			
+			// aapt resource value: 0x7f080064
+			public const int listview_header_height = 2131230820;
+			
+			// aapt resource value: 0x7f080065
+			public const int listview_pending_height = 2131230821;
+			
+			// aapt resource value: 0x7f080066
+			public const int listview_report_height = 2131230822;
+			
+			// aapt resource value: 0x7f080052
+			public const int margin_beforemaxlong = 2131230802;
+			
+			// aapt resource value: 0x7f080050
+			public const int margin_long = 2131230800;
+			
+			// aapt resource value: 0x7f080053
+			public const int margin_maxlong = 2131230803;
+			
+			// aapt resource value: 0x7f08004e
+			public const int margin_medium = 2131230798;
+			
+			// aapt resource value: 0x7f08004b
+			public const int margin_mostshort = 2131230795;
+			
+			// aapt resource value: 0x7f08004f
+			public const int margin_prettylong = 2131230799;
+			
+			// aapt resource value: 0x7f08004d
+			public const int margin_short = 2131230797;
+			
+			// aapt resource value: 0x7f080051
+			public const int margin_verylong = 2131230801;
+			
+			// aapt resource value: 0x7f080054
+			public const int margin_verymaxlong = 2131230804;
+			
+			// aapt resource value: 0x7f08004c
+			public const int margin_veryshort = 2131230796;
+			
+			// aapt resource value: 0x7f08006a
+			public const int material_drawer_item_primary_text = 2131230826;
+			
 			// aapt resource value: 0x7f080048
 			public const int notification_large_icon_height = 2131230792;
 			
@@ -1205,6 +1271,36 @@ namespace CustomView
 			
 			// aapt resource value: 0x7f08004a
 			public const int notification_subtext_size = 2131230794;
+			
+			// aapt resource value: 0x7f080068
+			public const int tab_height = 2131230824;
+			
+			// aapt resource value: 0x7f080069
+			public const int tab_height_mini = 2131230825;
+			
+			// aapt resource value: 0x7f08005a
+			public const int text_heading = 2131230810;
+			
+			// aapt resource value: 0x7f080058
+			public const int text_large = 2131230808;
+			
+			// aapt resource value: 0x7f08005b
+			public const int text_largeheading = 2131230811;
+			
+			// aapt resource value: 0x7f080057
+			public const int text_medium = 2131230807;
+			
+			// aapt resource value: 0x7f080056
+			public const int text_small = 2131230806;
+			
+			// aapt resource value: 0x7f080059
+			public const int text_subheading = 2131230809;
+			
+			// aapt resource value: 0x7f080055
+			public const int text_verysmall = 2131230805;
+			
+			// aapt resource value: 0x7f080063
+			public const int toolsbar_height = 2131230819;
 			
 			static Dimension()
 			{
@@ -1442,8 +1538,8 @@ namespace CustomView
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0c0061
-			public const int action0 = 2131492961;
+			// aapt resource value: 0x7f0c0063
+			public const int action0 = 2131492963;
 			
 			// aapt resource value: 0x7f0c0041
 			public const int action_bar = 2131492929;
@@ -1469,8 +1565,8 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0042
 			public const int action_context_bar = 2131492930;
 			
-			// aapt resource value: 0x7f0c0065
-			public const int action_divider = 2131492965;
+			// aapt resource value: 0x7f0c0067
+			public const int action_divider = 2131492967;
 			
 			// aapt resource value: 0x7f0c0002
 			public const int action_menu_divider = 2131492866;
@@ -1502,14 +1598,14 @@ namespace CustomView
 			// aapt resource value: 0x7f0c002b
 			public const int buttonPanel = 2131492907;
 			
-			// aapt resource value: 0x7f0c0062
-			public const int cancel_action = 2131492962;
+			// aapt resource value: 0x7f0c0064
+			public const int cancel_action = 2131492964;
 			
 			// aapt resource value: 0x7f0c0039
 			public const int checkbox = 2131492921;
 			
-			// aapt resource value: 0x7f0c0068
-			public const int chronometer = 2131492968;
+			// aapt resource value: 0x7f0c006a
+			public const int chronometer = 2131492970;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int collapseActionView = 2131492892;
@@ -1517,11 +1613,17 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0031
 			public const int contentPanel = 2131492913;
 			
-			// aapt resource value: 0x7f0c005e
-			public const int csProfile = 2131492958;
+			// aapt resource value: 0x7f0c0060
+			public const int csProfile = 2131492960;
 			
-			// aapt resource value: 0x7f0c005f
-			public const int csSearch = 2131492959;
+			// aapt resource value: 0x7f0c0061
+			public const int csSearch = 2131492961;
+			
+			// aapt resource value: 0x7f0c0058
+			public const int csvSearchEdittext = 2131492952;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int csvSearchMenu = 2131492951;
 			
 			// aapt resource value: 0x7f0c0037
 			public const int custom = 2131492919;
@@ -1541,20 +1643,20 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0043
 			public const int edit_query = 2131492931;
 			
+			// aapt resource value: 0x7f0c0059
+			public const int edt_search = 2131492953;
+			
 			// aapt resource value: 0x7f0c0019
 			public const int end = 2131492889;
 			
-			// aapt resource value: 0x7f0c006d
-			public const int end_padder = 2131492973;
+			// aapt resource value: 0x7f0c006f
+			public const int end_padder = 2131492975;
 			
-			// aapt resource value: 0x7f0c0059
-			public const int et_EndPrice = 2131492953;
+			// aapt resource value: 0x7f0c005b
+			public const int et_EndPrice = 2131492955;
 			
-			// aapt resource value: 0x7f0c0058
-			public const int et_StartPrice = 2131492952;
-			
-			// aapt resource value: 0x7f0c0057
-			public const int et_search = 2131492951;
+			// aapt resource value: 0x7f0c005a
+			public const int et_StartPrice = 2131492954;
 			
 			// aapt resource value: 0x7f0c0025
 			public const int expand_activities_button = 2131492901;
@@ -1583,14 +1685,14 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0053
 			public const int imvDisplay = 2131492947;
 			
+			// aapt resource value: 0x7f0c006e
+			public const int info = 2131492974;
+			
+			// aapt resource value: 0x7f0c0068
+			public const int line1 = 2131492968;
+			
 			// aapt resource value: 0x7f0c006c
-			public const int info = 2131492972;
-			
-			// aapt resource value: 0x7f0c0066
-			public const int line1 = 2131492966;
-			
-			// aapt resource value: 0x7f0c006a
-			public const int line3 = 2131492970;
+			public const int line3 = 2131492972;
 			
 			// aapt resource value: 0x7f0c0009
 			public const int listMode = 2131492873;
@@ -1598,11 +1700,11 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0028
 			public const int list_item = 2131492904;
 			
-			// aapt resource value: 0x7f0c0060
-			public const int lvShow = 2131492960;
+			// aapt resource value: 0x7f0c0062
+			public const int lvShow = 2131492962;
 			
-			// aapt resource value: 0x7f0c0064
-			public const int media_actions = 2131492964;
+			// aapt resource value: 0x7f0c0066
+			public const int media_actions = 2131492966;
 			
 			// aapt resource value: 0x7f0c001a
 			public const int middle = 2131492890;
@@ -1643,8 +1745,8 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0033
 			public const int scrollView = 2131492915;
 			
-			// aapt resource value: 0x7f0c005c
-			public const int scrollView1 = 2131492956;
+			// aapt resource value: 0x7f0c005e
+			public const int scrollView1 = 2131492958;
 			
 			// aapt resource value: 0x7f0c0045
 			public const int search_badge = 2131492933;
@@ -1676,8 +1778,8 @@ namespace CustomView
 			// aapt resource value: 0x7f0c004e
 			public const int search_voice_btn = 2131492942;
 			
-			// aapt resource value: 0x7f0c005d
-			public const int seekBarSpeed = 2131492957;
+			// aapt resource value: 0x7f0c005f
+			public const int seekBarSpeed = 2131492959;
 			
 			// aapt resource value: 0x7f0c004f
 			public const int select_dialog_listview = 2131492943;
@@ -1709,8 +1811,8 @@ namespace CustomView
 			// aapt resource value: 0x7f0c0017
 			public const int src_over = 2131492887;
 			
-			// aapt resource value: 0x7f0c0063
-			public const int status_bar_latest_event_content = 2131492963;
+			// aapt resource value: 0x7f0c0065
+			public const int status_bar_latest_event_content = 2131492965;
 			
 			// aapt resource value: 0x7f0c004c
 			public const int submit_area = 2131492940;
@@ -1718,17 +1820,17 @@ namespace CustomView
 			// aapt resource value: 0x7f0c000b
 			public const int tabMode = 2131492875;
 			
-			// aapt resource value: 0x7f0c006b
-			public const int text = 2131492971;
+			// aapt resource value: 0x7f0c006d
+			public const int text = 2131492973;
 			
-			// aapt resource value: 0x7f0c0069
-			public const int text2 = 2131492969;
+			// aapt resource value: 0x7f0c006b
+			public const int text2 = 2131492971;
 			
 			// aapt resource value: 0x7f0c0034
 			public const int textSpacerNoButtons = 2131492916;
 			
-			// aapt resource value: 0x7f0c0067
-			public const int time = 2131492967;
+			// aapt resource value: 0x7f0c0069
+			public const int time = 2131492969;
 			
 			// aapt resource value: 0x7f0c002a
 			public const int title = 2131492906;
@@ -1739,11 +1841,11 @@ namespace CustomView
 			// aapt resource value: 0x7f0c002e
 			public const int topPanel = 2131492910;
 			
-			// aapt resource value: 0x7f0c005a
-			public const int txtByName = 2131492954;
+			// aapt resource value: 0x7f0c005c
+			public const int txtByName = 2131492956;
 			
-			// aapt resource value: 0x7f0c005b
-			public const int txtByPrice = 2131492955;
+			// aapt resource value: 0x7f0c005d
+			public const int txtByPrice = 2131492957;
 			
 			// aapt resource value: 0x7f0c0054
 			public const int txtCenter1 = 2131492948;

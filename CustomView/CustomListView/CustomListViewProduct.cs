@@ -15,8 +15,6 @@ namespace CustomView {
 			this.productList = productList;
 		}
 
-
-
 		public override int Count {
 			get {
 				return productList.Count;

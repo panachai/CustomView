@@ -8,9 +8,11 @@
         android:layout_width="match_parent"
         android:orientation="vertical">
         <CustomView.CustomViewSearchMenu
+            android:id="@+id/csvSearchMenu"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
         <CustomView.CustomViewSearchEdittext
+            android:id="@+id/csvSearchEdittext"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
     </LinearLayout>

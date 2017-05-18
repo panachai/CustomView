@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Android.App;
 using Android.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
 
+
 namespace CustomView {
 	public class CustomViewSearch : RelativeLayout {
-		Context context;
-		private EditText edtSearch, edtStartPrice, edtEndPrice;
+		private Context context;
+		CustomViewSearchMenu customViewSearchMenu;
+		CustomViewSearchEdittext customViewSearchEdittext;
+		public EventHandler Searchtype;
+
+		//private TextView txtByName;
+		//private TextView txtByPrice;
 
 		public CustomViewSearch(Context context) : base(context) {
 			this.context = context;
@@ -28,32 +37,34 @@ namespace CustomView {
 		{
 			LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 			View view = inflater.Inflate(Resource.Layout.CustomView_Search, this);
-
-			edtSearch = view.FindViewById<EditText>(Resource.Id.et_search);
-			edtStartPrice = view.FindViewById<EditText>(Resource.Id.et_StartPrice);
-			edtEndPrice = view.FindViewById<EditText>(Resource.Id.et_EndPrice);
-
-			SetEventForSearch();
+			customViewSearchMenu = FindViewById<CustomViewSearchMenu>(Resource.Id.csvSearchMenu);
+			customViewSearchEdittext = FindViewById<CustomViewSearchEdittext>(Resource.Id.csvSearchEdittext);
 		}
+		//send to MainActivity
+		void setCallbackFromCustomViewSearchMenu() {
+			customViewSearchMenu.Search += (object sender, EventArgs e) => {
 
-		void SetEventForSearch() {
-			/*
-			txtColumn1.Click += delegate {
-			//onclick
+				Searchtype.Invoke(sender, e);
 			};
 
-			*/
-
-			edtSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
-				CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchValue(etSearch.Text)); //listProductModel
-				listShow.Adapter = employeeProfileAdapter;
-
-				//*controlHeight
-				new ListViewAdapterUtil().GetTotalHeightofListView(listShow); //for non static
-																			  //ListViewAdapterUtil.GetTotalHeightofListView(listShow); //for static class
-			};
 		}
 
+		public CustomViewSearchMenu.SearchBy GetSearchType() {
+
+			return customViewSearchMenu.searchType;
+		}
+		public EditText GetSearchValueByName() {
+
+			return customViewSearchEdittext.edtSearch;
+		}
+		public EditText GetSearchValueByPriceStart() {
+
+			return customViewSearchEdittext.edtStartPrice;
+		}
+		public EditText GetSearchValueByPriceEnd() {
+
+			return customViewSearchEdittext.edtEndPrice;
+		}
 
 	}
 }

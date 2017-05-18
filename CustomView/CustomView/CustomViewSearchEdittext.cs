@@ -8,6 +8,9 @@ namespace CustomView {
 	public class CustomViewSearchEdittext : RelativeLayout {
 		//private EditText etSearch;
 		Context context;
+		public EditText edtSearch { get; set; }
+		public EditText edtStartPrice { get; set; }
+		public EditText edtEndPrice { get; set; }
 
 		public CustomViewSearchEdittext(Context context) : base(context) {
 			this.context = context;
@@ -28,6 +31,14 @@ namespace CustomView {
 		{
 			LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 			View view = inflater.Inflate(Resource.Layout.CustomView_SearchEdittext, this);
+
+			edtSearch = view.FindViewById<EditText>(Resource.Id.edt_search);
+			edtStartPrice = view.FindViewById<EditText>(Resource.Id.et_StartPrice);
+			edtEndPrice = view.FindViewById<EditText>(Resource.Id.et_EndPrice);
+
+			edtSearch.Visibility = ViewStates.Invisible;
+			edtStartPrice.Visibility = ViewStates.Invisible;
+			edtEndPrice.Visibility = ViewStates.Invisible;
 
 			//etSearch = view.FindViewById<EditText>(Resource.Id.et_search);
 

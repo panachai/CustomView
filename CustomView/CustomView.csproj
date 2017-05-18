@@ -91,6 +91,7 @@
     <AndroidResource Include="Resources\layout\CustomView_Search.axml" />
     <AndroidResource Include="Resources\layout\CustomView_SearchMenu.axml" />
     <AndroidResource Include="Resources\layout\CustomView_SearchEdittext.axml" />
+    <AndroidResource Include="Resources\values\Dimens.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -4,26 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <EditText
-        android:id="@+id/et_search"
+        android:id="@+id/edt_search"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="Search Here" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="10">
         <EditText
             android:id="@+id/et_StartPrice"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SearchByName"
+            android:hint="start value"
             android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
+            android:textSize="@dimen/text_medium"
             android:layout_weight="5" />
         <EditText
             android:id="@+id/et_EndPrice"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:hint="Search Here" />
+            android:hint="end value"
+            android:textSize="@dimen/text_medium"
+            android:layout_weight="5" />
     </LinearLayout>
 </RelativeLayout>

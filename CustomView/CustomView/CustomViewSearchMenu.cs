@@ -8,6 +8,18 @@ namespace CustomView {
 	public class CustomViewSearchMenu : LinearLayout {
 		//private TextView txtByName, txtByPrice;
 		Context context;
+		private TextView txtByName;
+		private TextView txtByPrice;
+		public EventHandler Search;
+		public enum SearchBy {
+			ProductId,
+			ProductName,
+			ProductPrice
+		};
+
+		//public SearchBy searchType = SearchBy.ProductId;
+
+		public SearchBy searchType = SearchBy.ProductId; //enum
 
 		public CustomViewSearchMenu(Context context) : base(context) {
 			this.context = context;
@@ -29,10 +41,45 @@ namespace CustomView {
 			LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 			View view = inflater.Inflate(Resource.Layout.CustomView_SearchMenu, this);
 
-			//txtByName = view.FindViewById<TextView>(Resource.Id.txtByName);
-			//txtByPrice = view.FindViewById<TextView>(Resource.Id.txtByPrice);
 
+			txtByName = view.FindViewById<TextView>(Resource.Id.txtByName);
+			txtByPrice = view.FindViewById<TextView>(Resource.Id.txtByPrice);
+
+			SetEventOnClick();
+			//SetCallbackForSearch();
 		}
 
+		void SetEventOnClick() {
+			txtByName.Click += (sender, e) => {
+
+				//do in CustomViewSearchEditext (callback)
+				//edtStartPrice.Visibility = ViewStates.Gone;
+				//edtEndPrice.Visibility = ViewStates.Gone;
+				//edtSearch.Visibility = ViewStates.Invisible;
+
+				searchType = SearchBy.ProductName;
+				Search.Invoke(sender, e);
+			};
+
+			txtByPrice.Click += (sender, e) => {
+				//edtStartPrice.Visibility = ViewStates.Invisible;
+				//edtEndPrice.Visibility = ViewStates.Invisible;
+				//edtSearch.Visibility = ViewStates.Gone;
+
+				searchType = SearchBy.ProductPrice;
+
+				Search.Invoke(sender, e);
+			};
+		}
+
+		/*
+		public void SetCallbackForSearch() {
+
+			edtSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
+
+				Search.Invoke(sender, e);
+			};
+		}
+*/
 	}
 }
