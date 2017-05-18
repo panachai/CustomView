@@ -47,14 +47,14 @@ namespace CustomView {
 			customListViewProduct = FindViewById<ListView>(Resource.Id.lvShow);
 
 			//customview search
-			//customViewSearchMenu = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
+			customViewSearch = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
 
 			//txtColumn1 = FindViewById<TextView>(Resource.Id.txtColumn1)
 		}
 
 		void callbackSearch() {
 			//wait callback from CustomViewsearch
-			customViewSearch.Searchtype += (object sender, EventArgs e) => {
+			customViewSearch.StartSearch += (object sender, EventArgs e) => {
 				//var type = customViewSearch.searchType;
 				var type = customViewSearch.GetSearchType();
 

@@ -11,6 +11,7 @@ namespace CustomView {
 		public EditText edtSearch { get; set; }
 		public EditText edtStartPrice { get; set; }
 		public EditText edtEndPrice { get; set; }
+		public EventHandler StartSearch;
 
 		public CustomViewSearchEdittext(Context context) : base(context) {
 			this.context = context;
@@ -40,8 +41,44 @@ namespace CustomView {
 			edtStartPrice.Visibility = ViewStates.Invisible;
 			edtEndPrice.Visibility = ViewStates.Invisible;
 
-			//etSearch = view.FindViewById<EditText>(Resource.Id.et_search);
 
+			//etSearch = view.FindViewById<EditText>(Resource.Id.et_search);
+			SetSearchFunction();
+		}
+
+		void SetSearchFunction() {
+
+			edtSearch.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
+
+				StartSearch.Invoke(sender, e); ;
+			};
+
+			edtStartPrice.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
+
+				StartSearch.Invoke(sender, e);
+			};
+
+			edtEndPrice.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
+
+				StartSearch.Invoke(sender, e);
+			};
+		}
+
+
+		public void VisibleEditeText(CustomViewSearchMenu.SearchBy searchType) {
+			if (searchType == CustomViewSearchMenu.SearchBy.ProductId) {
+
+			} else if (searchType == CustomViewSearchMenu.SearchBy.ProductName) {
+				edtSearch.Visibility = ViewStates.Invisible;
+				edtStartPrice.Visibility = ViewStates.Gone;
+				edtEndPrice.Visibility = ViewStates.Gone;
+
+			} else if (searchType == CustomViewSearchMenu.SearchBy.ProductPrice) {
+				edtSearch.Visibility = ViewStates.Gone;
+				edtStartPrice.Visibility = ViewStates.Invisible;
+				edtEndPrice.Visibility = ViewStates.Invisible;
+
+			}
 		}
 
 	}

@@ -13,7 +13,7 @@ namespace CustomView {
 		private Context context;
 		CustomViewSearchMenu customViewSearchMenu;
 		CustomViewSearchEdittext customViewSearchEdittext;
-		public EventHandler Searchtype;
+		public EventHandler StartSearch;
 
 		//private TextView txtByName;
 		//private TextView txtByPrice;
@@ -39,12 +39,20 @@ namespace CustomView {
 			View view = inflater.Inflate(Resource.Layout.CustomView_Search, this);
 			customViewSearchMenu = FindViewById<CustomViewSearchMenu>(Resource.Id.csvSearchMenu);
 			customViewSearchEdittext = FindViewById<CustomViewSearchEdittext>(Resource.Id.csvSearchEdittext);
+
+			setCallbackFromCustomViewSearchMenu();
 		}
 		//send to MainActivity
 		void setCallbackFromCustomViewSearchMenu() {
 			customViewSearchMenu.Search += (object sender, EventArgs e) => {
 
-				Searchtype.Invoke(sender, e);
+				//Searchtype.Invoke(sender, e);
+				customViewSearchEdittext.VisibleEditeText(GetSearchType());
+			};
+
+			customViewSearchEdittext.StartSearch += (object sender, EventArgs e) => {
+
+				StartSearch.Invoke(sender, e);
 			};
 
 		}
