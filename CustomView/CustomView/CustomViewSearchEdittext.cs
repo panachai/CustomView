@@ -37,7 +37,8 @@ namespace CustomView {
 			edtStartPrice = view.FindViewById<EditText>(Resource.Id.et_StartPrice);
 			edtEndPrice = view.FindViewById<EditText>(Resource.Id.et_EndPrice);
 
-			edtSearch.Visibility = ViewStates.Gone;
+
+			//edtSearch.Visibility = ViewStates.Gone;
 			edtStartPrice.Visibility = ViewStates.Gone;
 			edtEndPrice.Visibility = ViewStates.Gone;
 

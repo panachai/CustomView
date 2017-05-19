@@ -19,7 +19,7 @@ namespace CustomView {
 
 		//public SearchBy searchType = SearchBy.ProductId;
 
-		public SearchBy searchType = SearchBy.ProductId; //enum
+		public SearchBy searchType = SearchBy.ProductName; //enum
 
 		public CustomViewSearchMenu(Context context) : base(context) {
 			this.context = context;
@@ -51,23 +51,12 @@ namespace CustomView {
 
 		void SetEventOnClick() {
 			txtByName.Click += (sender, e) => {
-
-				//do in CustomViewSearchEditext (callback)
-				//edtStartPrice.Visibility = ViewStates.Gone;
-				//edtEndPrice.Visibility = ViewStates.Gone;
-				//edtSearch.Visibility = ViewStates.Invisible;
-
 				searchType = SearchBy.ProductName;
 				Search.Invoke(sender, e);
 			};
 
 			txtByPrice.Click += (sender, e) => {
-				//edtStartPrice.Visibility = ViewStates.Invisible;
-				//edtEndPrice.Visibility = ViewStates.Invisible;
-				//edtSearch.Visibility = ViewStates.Gone;
-
 				searchType = SearchBy.ProductPrice;
-
 				Search.Invoke(sender, e);
 			};
 		}

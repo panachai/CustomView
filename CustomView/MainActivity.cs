@@ -15,6 +15,7 @@ namespace CustomView {
 		private ProfileModel profileModel;
 		private ListView customListViewProduct;
 		private List<ProductModel> listProductModel;
+		//private List<ProductModel> resultProductList;
 		//private List<ProductModel> listProductModel; //move to customviewsearch
 
 		protected override void OnCreate(Bundle savedInstanceState) {
@@ -49,7 +50,8 @@ namespace CustomView {
 			//customview search
 			customViewSearch = FindViewById<CustomViewSearch>(Resource.Id.csSearch);
 
-			//txtColumn1 = FindViewById<TextView>(Resource.Id.txtColumn1)
+			//callbackSearch
+			//resultProductList = new List<ProductModel>();
 		}
 
 		void callbackSearch() {
@@ -62,9 +64,17 @@ namespace CustomView {
 
 				} else if (type == CustomViewSearchMenu.SearchBy.ProductName) {
 
-					string valueSearch = customViewSearch.GetSearchValueByName().Text;
+					List<ProductModel> resultProductList = new List<ProductModel>();
 
-					CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchByNameValue(valueSearch)); //listProductModel
+					if (!string.IsNullOrEmpty(customViewSearch.GetSearchValueByName().Text)) {
+
+						string valueSearch = customViewSearch.GetSearchValueByName().Text;
+						resultProductList = SearchByNameValue(valueSearch);
+
+					} else {
+
+					}
+					CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, CheckEmptyValue(resultProductList)); //listProductModel
 					customListViewProduct.Adapter = employeeProfileAdapter;
 
 					//*controlHeight
@@ -75,11 +85,13 @@ namespace CustomView {
 
 					if (!string.IsNullOrEmpty(customViewSearch.GetSearchValueByPriceStart().Text)
 						&& !string.IsNullOrEmpty(customViewSearch.GetSearchValueByPriceEnd().Text)) {
-						
+
 						int starPrice = int.Parse(customViewSearch.GetSearchValueByPriceStart().Text);
 						int endPrice = int.Parse(customViewSearch.GetSearchValueByPriceEnd().Text);
 
-						CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, SearchByPriceValue(starPrice, endPrice)); //listProductModel
+						List<ProductModel> resultProductList = SearchByPriceValue(starPrice, endPrice);
+
+						CustomListViewProduct employeeProfileAdapter = new CustomListViewProduct(this, CheckEmptyValue(resultProductList)); //listProductModel
 						customListViewProduct.Adapter = employeeProfileAdapter;
 
 						//*controlHeight
@@ -88,18 +100,45 @@ namespace CustomView {
 
 
 				}
+				//DeleteNotfouneValue();
 			};
+		}
+
+		void DeleteNotfouneValue() {//(l => l.ProductName.ToLower().Contains(value.ToLower())).ToList();
+			ProductModel itemToRemove = listProductModel.SingleOrDefault(l => l.ProductId == 0000000000);
+
+			if (itemToRemove != null) {
+				listProductModel.Remove(itemToRemove);
+			}
+
+		}
+
+		List<ProductModel> CheckEmptyValue(List<ProductModel> productValue) {
+			if (productValue.Count == 0) {
+
+				productValue.Add(new ProductModel {
+					ProductId = 0000000000,
+					ProductName = "Not Found",
+					ProductPrice = 0,
+					ProductAmount = 0,
+					ProductPictureUrl = " "
+				});
+
+				return productValue;
+			} else {
+				return productValue;
+			}
 		}
 
 		private List<ProductModel> SearchByNameValue(string value) { //Contains = like in sql
 																	 //.ToLower() for search in lowercase
 			List<ProductModel> productList = listProductModel.Where(l => l.ProductName.ToLower().Contains(value.ToLower())).ToList();
 
-			return productList; //wait to do
+			return productList;
 		}
 
 		private List<ProductModel> SearchByPriceValue(int startValue, int endValue) {
-			
+
 			List<ProductModel> productList = listProductModel.Where(l => l.ProductPrice >= startValue && l.ProductPrice <= endValue).ToList();
 
 			return productList;
@@ -284,6 +323,13 @@ namespace CustomView {
 				ProductPictureUrl = "http://images.samsung.com/is/image/samsung/th-galaxy-s8-g955-sm-g955fzvdcam-frontgray-thumb-61707983?$PG_PRD_CARD_PNG2$"
 			});
 
+			listProductModel.Add(new ProductModel {
+				ProductId = 0000000021,
+				ProductName = "Nexus",
+				ProductPrice = 110,
+				ProductAmount = 91,
+				ProductPictureUrl = "http://images.samsung.com/is/image/samsung/th-galaxy-s8-g955-sm-g955fzvdcam-frontgray-thumb-61707983?$PG_PRD_CARD_PNG2$"
+			});
 
 		}
 

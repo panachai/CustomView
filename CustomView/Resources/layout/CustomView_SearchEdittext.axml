@@ -21,6 +21,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="@dimen/text_medium"
             android:layout_weight="5" />
+    <!--android:numeric="integer"-->
         <EditText
             android:id="@+id/et_EndPrice"
             android:layout_height="wrap_content"
